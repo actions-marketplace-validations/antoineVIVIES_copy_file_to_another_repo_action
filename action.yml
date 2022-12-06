@@ -1,7 +1,7 @@
 name: 'Push a file to another repository'
 description: 'Used for pushing a copy of a file to another repository'
 inputs:
-  source_file:
+  source_files:
     description: 'Source file from the origin directory'
     required: true
   destination_repo:
@@ -39,7 +39,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.source-file }}
+    - ${{ inputs.source-files }}
     - ${{ inputs.destination-repo }}
     - ${{ inputs.destination-folder }}
     - ${{ inputs.user-email }}
